@@ -1,0 +1,17 @@
+---
+- name: Manage access rules
+  check_point.mgmt.cp_mgmt_access_rule:
+    name: "{{ item.name }}"
+    layer: "{{ item.layer }}"
+    position: "{{ item.position }}"
+    source: "{{ item.source }}"
+    destination: "{{ item.destination }}"
+    service: "{{ item.service }}"
+    action: "{{ item.action }}"
+    track: "{{ item.track }}"
+    enabled: "{{ item.enabled }}"
+    comments: "{{ rule_comments }}"
+    auto_publish_session: "{{ auto_publish_enabled }}"
+    state: "{{ item.state }}"
+  loop: "{{ access_rules }}"
+  tags: [access_rules, all]

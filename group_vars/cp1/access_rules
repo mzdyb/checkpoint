@@ -1,0 +1,55 @@
+---
+access_rules:
+  - name: "Allow_Mgmt_cp1"
+    layer: "Network"
+    position: 1
+    source:
+      - "Mgmt_Network"
+    destination:
+      - "cp1"
+    service:
+      - "HTTPS"
+    action: "Accept"
+    track:
+      type: "Log"
+      accounting: true
+      per_session: true
+    enabled: true
+    comments: "Allow internal access to Management Server"
+    state: present
+
+  - name: "Allow_Internal_Web"
+    layer: "Network"
+    position: 2
+    source: 
+      - "Internal_Network"
+    destination: 
+      - "Web_Servers"
+    service: 
+      - "HTTP"
+      - "HTTPS"
+    action: "Accept"
+    track:
+      type: "Log"
+      accounting: true
+      per_session: true
+    enabled: true
+    comments: "Allow internal access to web servers"
+    state: present
+
+  # - name: "myCleanup rule"
+  #   layer: "Network"
+  #   position: "bottom"
+  #   source:
+  #     - "Any"
+  #   destination: 
+  #     - "Any"
+  #   service: 
+  #     - "Any"
+  #   # vpn: "Any"
+  #   action: "Drop"
+  #   track:
+  #     type: "None"
+  #   enabled: true
+  #   comments: "Default cleanup rule"
+  #   state: present

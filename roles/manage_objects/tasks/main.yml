@@ -1,0 +1,31 @@
+---
+- name: Create network objects
+  check_point.mgmt.cp_mgmt_network:
+    name: "{{ item.name }}"
+    subnet: "{{ item.subnet }}"
+    mask_length: "{{ item.mask_length }}"
+    comments: "{{ object_comments }}"
+    auto_publish_session: "{{ auto_publish_enabled }}"
+    state: "{{ item.state }}"
+  loop: "{{ networks }}"
+  tags: [objects, all]
+
+- name: Create host objects
+  check_point.mgmt.cp_mgmt_host:
+    name: "{{ item.name }}"
+    ip_address: "{{ item.ip_address }}"
+    comments: "{{ object_comments }}"
+    auto_publish_session: "{{ auto_publish_enabled }}"
+    state: "{{ item.state }}"
+  loop: "{{ hosts }}"
+  tags: [objects, all]
+
+- name: Create group objects
+  check_point.mgmt.cp_mgmt_group:
+    name: "{{ item.name }}"
+    members: "{{ item.members }}"
+    comments: "{{ object_comments }}"
+    auto_publish_session: "{{ auto_publish_enabled }}"
+    state: "{{ item.state }}"
+  loop: "{{ cpgroups }}"
+  tags: [objects, all]

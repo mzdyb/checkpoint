@@ -1,0 +1,13 @@
+---
+- name: Install policy
+  hosts: cp1
+  connection: ansible.netcommon.httpapi
+
+  tasks:
+    - name: Install policy on gateway
+      check_point.mgmt.cp_mgmt_install_policy:
+        policy_package: "{{ item.policy_package }}"
+        targets: "{{ item.policy_targets }}"
+        access: "{{ item.access_control_policy }}"
+        threat_prevention: "{{ item.threat_prevention_policy }}"
+      loop: "{{ policies }}"

@@ -1,0 +1,6 @@
+---
+policies:
+  - policy_package: Standard
+    policy_targets: cp1
+    access_control_policy: true
+    threat_prevention_policy: false

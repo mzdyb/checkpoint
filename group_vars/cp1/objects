@@ -1,0 +1,38 @@
+---
+networks:
+  - name: "Mgmt_Network"
+    subnet: "192.168.130.0"
+    mask_length: 24
+    state: present
+  - name: "DMZ_Network"
+    subnet: "10.0.0.0"
+    mask_length: 24
+    state: present
+  - name: "Internal_Network"
+    subnet: "20.0.0.0"
+    mask_length: 24
+    state: present
+
+hosts:
+  - name: "WebServer1"
+    ip_address: "10.0.0.2"
+    state: present
+  - name: "WebServer2" 
+    ip_address: "10.0.0.3"
+    state: present
+  - name: "WebServer3"
+    ip_address: "10.0.0.4"
+    state: present
+
+cpgroups:
+  - name: "Web_Servers"
+    members:
+      - "WebServer1"
+      - "WebServer2"
+      - "WebServer3"
+    state: present
+  - name: "Corporate_Networks"
+    members:
+      - "Internal_Network"
+      - "DMZ_Network"
+    state: present
