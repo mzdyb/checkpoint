@@ -3,22 +3,6 @@
   hosts: cp1
   connection: ansible.netcommon.httpapi
 
-  # roles:
-  #   - ../roles/manage_objects
-  #   - ../roles/manage_access_rules
-
-  tasks:
-    # - name: Show hosts
-    #   cp_mgmt_host_facts:
-    #     details_level: full
-    #   register: host_facts
-
-    # - debug: var=host_facts
-
-
-    - name: show-access-rule
-      cp_mgmt_access_rule_facts:
-        layer: Network
-        # name: Rule 1
-      register: rules_facts
-    - debug: var=rules_facts
+  roles:
+    - ../roles/manage_objects
+    - ../roles/manage_access_rules
