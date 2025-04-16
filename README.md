@@ -5,7 +5,7 @@ This project demonstrates an example of automating Check Point configuration usi
 ![Check Point lab](files/checkpoint_lab.png)
 
 
-Below Job Workflow is used to automate the configuration of Check Point objects (networks, hosts, and groups), security policies and the automatic installation of the policy. It enables http/https traffic from Internal_Network to Web_Servers group in DMZ and from Mgmt_Network to cp1 node
+Below Job Workflow is used to automate the configuration of Check Point objects (networks, hosts, and groups), security policies and the automatic installation of the policy. It enables http/https traffic from Internal_Network to Web_Servers group in DMZ and from Mgmt_Network to cp1 node:
 
 ![Job Workflow](files/checkpoint_workflow_template.png)
 
