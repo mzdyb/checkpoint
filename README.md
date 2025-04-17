@@ -9,7 +9,7 @@ Below Job Workflow is used to automate the configuration of Check Point objects 
 
 ![Job Workflow](files/checkpoint_workflow_template.png)
 
-As we can see the modular approach is used here and instead of having one playbook to configure everything separate Job Templates are used per particular functionality automation. It is implemented by using Ansible Tags in Roles and on Job Templates level. This hierarchy is also reflected in variables definition in group_vars folder (separate variables file per functionality).  
+As we can see the modular approach is used here and separate Job Templates are used per particular functionality automation. It is implemented by using Ansible Tags in Roles and on Job Templates level. This hierarchy is also reflected in variables definition in group_vars folder (separate variables file per functionality).  
   
 ## Author
 
