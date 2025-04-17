@@ -36,20 +36,3 @@ access_rules:
     enabled: true
     comments: "Allow internal access to web servers"
     state: present
-
-  # - name: "myCleanup rule"
-  #   layer: "Network"
-  #   position: "bottom"
-  #   source:
-  #     - "Any"
-  #   destination: 
-  #     - "Any"
-  #   service: 
-  #     - "Any"
-  #   # vpn: "Any"
-  #   action: "Drop"
-  #   track:
-  #     type: "None"
-  #   enabled: true
-  #   comments: "Default cleanup rule"
-  #   state: present
