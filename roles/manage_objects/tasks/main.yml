@@ -7,8 +7,7 @@
     comments: "{{ object_comments }}"
     auto_publish_session: "{{ auto_publish_enabled }}"
     state: "{{ item.state }}"
-  loop: "{{ networks }}"
-  tags: [objects, all]
+  loop: "{{ cp_networks }}"
 
 - name: Create host objects
   check_point.mgmt.cp_mgmt_host:
@@ -17,8 +16,7 @@
     comments: "{{ object_comments }}"
     auto_publish_session: "{{ auto_publish_enabled }}"
     state: "{{ item.state }}"
-  loop: "{{ hosts }}"
-  tags: [objects, all]
+  loop: "{{ cp_hosts }}"
 
 - name: Create group objects
   check_point.mgmt.cp_mgmt_group:
@@ -27,5 +25,4 @@
     comments: "{{ object_comments }}"
     auto_publish_session: "{{ auto_publish_enabled }}"
     state: "{{ item.state }}"
-  loop: "{{ cpgroups }}"
-  tags: [objects, all]
+  loop: "{{ cp_groups }}"

@@ -10,8 +10,7 @@
     action: "{{ item.action }}"
     track: "{{ item.track }}"
     enabled: "{{ item.enabled }}"
-    comments: "{{ rule_comments }}"
+    comments: "{{ item.comments | default(rule_comments) }}"
     auto_publish_session: "{{ auto_publish_enabled }}"
     state: "{{ item.state }}"
   loop: "{{ access_rules }}"
-  tags: [access_rules, all]

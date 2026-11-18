@@ -1,5 +1,5 @@
 ---
-networks:
+cp_networks:
   - name: "Mgmt_Network"
     subnet: "192.168.130.0"
     mask_length: 24
@@ -13,18 +13,18 @@ networks:
     mask_length: 24
     state: present
 
-hosts:
+cp_hosts:
   - name: "WebServer1"
     ip_address: "10.0.0.2"
     state: present
-  - name: "WebServer2" 
+  - name: "WebServer2"
     ip_address: "10.0.0.3"
     state: present
   - name: "WebServer3"
     ip_address: "10.0.0.4"
     state: present
 
-cpgroups:
+cp_groups:
   - name: "Web_Servers"
     members:
       - "WebServer1"

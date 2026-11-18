@@ -1,0 +1,4 @@
+execution-environment/context/
+ansible-navigator.log
+*-artifact-*
+.ssh

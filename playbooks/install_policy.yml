@@ -1,7 +1,6 @@
 ---
 - name: Install policy
-  hosts: cp1
-  connection: ansible.netcommon.httpapi
+  hosts: checkpoint
 
   tasks:
     - name: Install policy on gateway

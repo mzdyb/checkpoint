@@ -1,8 +1,9 @@
 ---
 - name: Manage Check Point configuration
-  hosts: cp1
-  connection: ansible.netcommon.httpapi
+  hosts: checkpoint
 
   roles:
-    - ../roles/manage_objects
-    - ../roles/manage_access_rules
+    - role: manage_objects
+      tags: objects
+    - role: manage_access_rules
+      tags: access_rules

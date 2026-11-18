@@ -21,11 +21,11 @@ access_rules:
   - name: "Allow_Internal_Web"
     layer: "Network"
     position: 2
-    source: 
+    source:
       - "Internal_Network"
-    destination: 
+    destination:
       - "Web_Servers"
-    service: 
+    service:
       - "HTTP"
       - "HTTPS"
     action: "Accept"
